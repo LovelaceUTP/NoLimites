@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="p10styles.css">
+        <link rel="icon" href="https://i.ibb.co/3swSf0Z/Group-2-transformed-1.png"  type="https://i.ibb.co/3swSf0Z/Group-2-transformed-1.png">
+        <title>NoLimites!</title>
+    <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Sectores</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://i.ibb.co/cggQ4GP/Group-2.png" type="https://i.ibb.co/cggQ4GP/Group-2.png">
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Selecciona los Sectores a los que Deseas Postular</h1>
+    <p>Busca y selecciona uno o más sectores según tu interés. Puedes buscar por nombre o seleccionar de la lista.</p>
+
+    <div class="search-container">
+        <label for="searchInput" class="search-label">Buscar Sectores:</label>
+        <input type="text" id="searchInput" onkeyup="filterTree()" placeholder="Escribe para buscar...">
+    </div>
+
+    <div id="sectorTree" class="tree-container">
+        <ul id="sectorList">
+            <!-- Sector Agricultura -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Agricultura</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Agricultura/Ganadería</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Agropecuaria</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Pesca, acuicultura y actividades relacionadas</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Automotriz -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Automotriz</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Automotriz</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Aviación -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Aviación/Aeronaves/Astilleros</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Aviación/Aeronaves/Astilleros</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Banca y Finanzas -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Banca y Finanzas</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Banca/Finanzas/Seguros</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Comercio -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Comercio</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Comercio mayorista</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Comercio minorista</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Retail</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Construcción -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Construcción</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Construcción</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Materiales de Construcción</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Cosmética -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Cosmética y Belleza</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Cosmética y Belleza</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Diseño y Decoración -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Diseño y Decoración</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Diseño y Decoración</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Educación -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Educación</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Educación</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Consultoría en RRHH</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Servicios sociales y de salud</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Farmacéutico -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Farmacéutica</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Farmacéuticas</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Fabricación -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Fabricación</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Fabricación de sustancias y productos químicos</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Fabricación de vehículos y maquinaria</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Producción de alimentos y bebidas</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Producción de madera y Fabricación de productos de madera y corcho</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Logística -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Logística</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Logística / Distribución</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Minería -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Minería e Hidrocarburos</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Minería e Hidrocarburos</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Retail -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Retail</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Retail</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Telecomunicaciones -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Telecomunicaciones</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Telecomunicaciones</label></li>
+                </ul>
+            </li>
+
+            <!-- Sector Textil -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Textil</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Textil</label></li>
+                </ul>
+            </li>
+
+            <!-- Otros Sectores -->
+            <li>
+                <span class="category-toggle">+</span> <strong>Otros Sectores</strong>
+                <ul class="nested">
+                    <li><label><input type="checkbox" class="sector-checkbox"> Automotriz</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Defensa</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Gobierno</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> ONG</label></li>
+                    <li><label><input type="checkbox" class="sector-checkbox"> Siderurgia</label></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <button type="submit" class="submit-btn">Enviar</button>
+    <div id="alert" class="alert">⚠️ Por favor, selecciona al menos una opción.</div>
+    <div id="successMessage" class="success" style="display: none;">¡Gracias! Hemos registrado tu selección.</div>
+</div>
+
+<button  id="previousButton" class="previous-btn">Anterior</button>
+<button id="nextButton" class="next-btn">Siguiente</button>
+
+<script>
+    // Para mostrar y ocultar las categorías
+    document.querySelectorAll('.category-toggle').forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+            const nestedList = toggle.nextElementSibling.nextElementSibling;
+            if (nestedList.style.display === "none" || nestedList.style.display === "") {
+                nestedList.style.display = "block";
+                toggle.textContent = "-";
+            } else {
+                nestedList.style.display = "none";
+                toggle.textContent = "+";
+            }
+        });
+    });
+
+    function filterTree() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toUpperCase();
+        const treeItems = document.querySelectorAll("#sectorList li");
+
+        treeItems.forEach(item => {
+            const text = item.textContent || item.innerText;
+            if (text.toUpperCase().includes(filter)) {
+                item.style.display = "";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    }
+
+    document.querySelector(".submit-btn").addEventListener("click", function () {
+        const selectedOptions = [];
+        document.querySelectorAll(".sector-checkbox:checked").forEach(checkbox => {
+            selectedOptions.push(checkbox.closest('label').textContent.trim());
+        });
+
+        const alertBox = document.getElementById("alert");
+        const successMessage = document.getElementById("successMessage");
+
+        if (selectedOptions.length > 0) {
+            alertBox.style.display = "none";
+            successMessage.style.display = "block";
+        } else {
+            alertBox.style.display = "block";
+        }
+    });
+
+    document.getElementById('nextButton').addEventListener('click', function() {
+        let url;
+    url = "p11index.html";
+    url = url.replace(" ", "%20"); // Reemplaza los espacios
+    window.location.href = url;
+      });
+  
+      document.getElementById('previousButton').addEventListener('click', function() {
+        let url;
+        url = "p9index.html";
+        url.replace(" ","%20") 
+        window.location.href = url; 
+      });
+</script>
+<script src="script.js"></script>
+
+
+</body>
+</html>

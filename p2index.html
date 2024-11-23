@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoLimites! - Selección de Nivel Educativo</title>
+    <link rel="stylesheet" href="p2styles.css">
+    <link rel="icon" href="https://i.ibb.co/3swSf0Z/Group-2-transformed-1.png" type="image/png">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Selecciona tu Nivel Educativo</h1>
+        <p>Por favor selecciona el nivel educativo que corresponda.</p>
+
+        <form id="educationLevelForm">
+            <div class="radio-group">
+                <label><input type="radio" name="educationLevel" value="Sin estudios"><span>Sin estudios</span></label>
+                <label><input type="radio" name="educationLevel" value="Inicial"><span>Inicial</span></label>
+                <label><input type="radio" name="educationLevel" value="Primaria"><span>Primaria</span></label>
+                <label><input type="radio" name="educationLevel" value="Secundaria"><span>Secundaria</span></label>
+                <label><input type="radio" name="educationLevel" value="Superior"><span>Superior</span></label>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar</button>
+            <div id="alert" class="alert">⚠️ Por favor, selecciona una opción.</div>
+            <div id="successMessage" class="success" style="display: none;">¡Gracias! Hemos registrado tu selección.</div>
+        </form>
+    </div>
+
+    <button id="previousButton" class="previous-btn">Anterior</button>
+    <button id="nextButton" class="next-btn" >Siguiente</button>
+
+    <script>
+        document.getElementById("educationLevelForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const selectedOption = document.querySelector("input[name='educationLevel']:checked");
+            const alertBox = document.getElementById("alert");
+            const successMessage = document.getElementById("successMessage");
+
+            if (!selectedOption) {
+                alertBox.style.display = "block";
+                successMessage.style.display = "none";
+            } else {
+                alertBox.style.display = "none";
+                successMessage.style.display = "block";
+                successMessage.textContent = "¡Gracias! Has seleccionado: " + selectedOption.value;
+            }
+        }); 
+        
+        document.getElementById('nextButton').addEventListener('click', function() {
+            let url;
+            url = "p3index.html"; 
+            window.location.href = url; 
+        });
+
+        document.getElementById('previousButton').addEventListener('click', function() {
+            let url;
+            url = "p1index.html"; 
+            window.location.href = url; 
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

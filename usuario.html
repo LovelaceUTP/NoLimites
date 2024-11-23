@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="usuariostyles.css">
+  <title>Perfil</title>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header"> 
+        <a class="back-button"><img src="https://i.ibb.co/zRTv3KW/left-arrow.png" alt="left-arrow"></a>
+        <h1>Perfil</h1>
+        </header>
+
+        <div class="profile">
+        <div class="avatar">
+            <img src="https://images.pexels.com/photos/1110355/pexels-photo-1110355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Avatar">
+            <button class="edit-avatar">
+            <img src="https://i.ibb.co/JqvXWfR/pen.png" alt="Editar">
+            </button>
+        </div>
+        </div>
+
+        <form class="details">
+        <h2>Detalles Personales</h2>
+        <label for="email">Correo</label>
+        <input type="email" id="email" placeholder="ejemplo@gmail.com">
+
+        <label for="password">Contraseña</label>
+        <div class="password-field">
+            <input type="password" id="password" placeholder="********">
+            <!-- <a href="#" class="change-password">Cambiar Contraseña</a> -->
+        </div>
+
+        <label for="phone">Número de celular</label>
+        <input type="tel" id="phone" placeholder="#########">
+
+        <label for="skills">Habilidades blandas</label>
+        <textarea id="skills" placeholder="Describete..."></textarea>
+        </form>
+        <div class = "contenedor">
+
+            <button class="button2">Cerrar Sesion</button>
+        </div>
+
+
+        <nav class="bottom-nav">
+            <a href="feed.html" class="nav-item">
+                <img src="https://i.ibb.co/tqdq4Kr/love.png" alt="Favoritos">
+            </a>
+            <a href="index.html" class="nav-item">
+                <img src="https://i.ibb.co/h1D8pXd/home.png" alt="Inicio">
+            </a>
+            <a href="usuario.html" class="nav-item active">
+                <img src="https://i.ibb.co/Bj81hJV/user.png" alt="Perfil">
+            </a>
+        </nav>
+    </div>
+    <script>
+        // Obtenemos los elementos del DOM
+        const readTextButton = document.getElementById('readText');
+        const stopTextButton = document.getElementById('stopText');
+      
+        // Inicializamos SpeechSynthesis
+        const synth = window.speechSynthesis;
+      
+        // Función para obtener todo el texto del documento
+        function getAllText() {
+          return document.body.innerText;
+        }
+      
+        // Función para leer el texto
+        function readText() {
+          // Obtener el texto del HTML
+          const text = getAllText();
+      
+          // Crear una instancia de SpeechSynthesisUtterance
+          const utterance = new SpeechSynthesisUtterance(text);
+      
+          // Configurar opciones (puedes personalizar el idioma y velocidad)
+          utterance.lang = 'es-ES'; // Español
+          utterance.rate = 1; // Velocidad (1 = normal)
+      
+          // Habilitar el botón de detener y deshabilitar el de leer
+          readTextButton.disabled = true;
+          stopTextButton.disabled = false;
+      
+          // Leer el texto
+          synth.speak(utterance);
+      
+          // Cuando termine de hablar, habilitar el botón de leer
+          utterance.onend = () => {
+            readTextButton.disabled = false;
+            stopTextButton.disabled = true;
+          };
+      
+          // Si se detiene la lectura manualmente
+          utterance.onerror = () => {
+            readTextButton.disabled = false;
+            stopTextButton.disabled = true;
+          };
+        }
+      
+        // Función para detener la lectura
+        function stopText() {
+          synth.cancel();
+          readTextButton.disabled = false;
+          stopTextButton.disabled = true;
+        }
+      
+        // Asociar eventos a los botones
+        readTextButton.addEventListener('click', readText);
+        stopTextButton.addEventListener('click', stopText);
+      </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
