@@ -1,0 +1,273 @@
+/* Globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    color: white;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+/* Contenedor de videos */
+.app_videos {
+    position: relative;
+    height: calc(100vh - 100px);
+    overflow-y: auto; 
+    width: 100%;
+    max-width: 320px;
+    scroll-snap-type: y mandatory;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 0; /* Eliminar margen inferior */
+    padding: 0; /* Eliminar cualquier relleno */
+}
+
+.app_videos::-webkit-scrollbar {
+    display: none;
+}
+
+.app_videos {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    scroll-snap-align: start;
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar relleno */
+}
+
+/* Contenedor con relación de aspecto */
+.aspect-ratio-container {
+    position: relative;
+    width: 100%; /* El ancho del contenedor principal */
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    overflow: hidden; /* Asegura que no se desborde contenido */
+    border-radius: 20px; /* Opcional, si deseas bordes redondeados */
+    background-color: black; /* Fondo mientras el video carga */
+}
+
+.video_player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* El video ocupa todo el ancho del contenedor */
+    height: 100%; /* El video ocupa todo el alto del contenedor */
+    object-fit: contain; /* Hace que el video mantenga su relación de aspecto sin recortar */
+    /* background-color: rgb(0, 220, 110); Fondo negro cuando el video no cubra toda el área */
+}
+
+.videoSidebar {
+    position: absolute;
+    top: 35%;
+    right: 10px;
+    width: 15%;
+    height: 100%;
+}
+
+.videoSidebar .videoSidebar_button {
+    width: 50%;
+    height: 10%;
+    /* background-color: red; */
+    cursor: pointer;
+}
+
+.videoSidebar_button img {
+    width: auto;              /* La imagen ocupará todo el ancho del contenedor */
+    height: 8vh;             /* Mantiene la proporción de la imagen */
+}
+
+.sound {
+    position: absolute; /* Fijo en la pantalla */
+    left: 10px; /* Ajusta según tus necesidades */
+    top: 10px; /* Ubícalo en la esquina inferior derecha */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo para que destaque */
+    color: white; /* Color del ícono */
+    border-radius: 50%; /* Forma redonda */
+    width: 50px; /* Tamaño del botón */
+    height: 50px; /* Tamaño del botón */
+    display: flex; /* Centra el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+
+}
+
+.sound .material-symbols-outlined {
+    font-size: 24px; /* Tamaño del ícono */
+}
+
+.pause .material-symbols-outlined {
+    font-size: 80px; /* Tamaño del ícono */
+    color: #ff0000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Barra de navegación */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 10px 0;
+    box-shadow: 5px 8px 9px rgba(35, 35, 35, 0.4);
+    z-index: 9999;
+    border: 1px solid black;
+    border-radius: 40px;
+    margin-bottom: 10px; /* Asegura que no haya margen extra */
+    height: 60px; /* Define explícitamente la altura */
+}
+
+.nav-item img {
+    width: auto;
+    height: 90%;
+}
+
+.nav-item.active img {
+    filter: brightness(0.5);
+}
+
+@media (max-width: 480px) {
+    /* Estilos que se aplican cuando el alto de la pantalla es mayor que el ancho */
+    .video_player {
+        object-fit: contain;
+    }
+    .video {
+        height: 100%;
+    }
+}
+
+/* Media Queries */
+@media (orientation: portrait) {
+    /* Estilos que se aplican cuando el alto de la pantalla es mayor que el ancho */
+    .app_videos {
+        max-width: 100%;
+        max-height: 100vh;
+        margin-bottom: 0;
+    }
+}
+
+/* Contenedor de videos */
+.app_videos {
+    position: relative;
+    height: calc(100vh - 100px);  /* Asegura que ocupe el 100% del alto de la pantalla menos un margen */
+    overflow-y: auto; 
+    width: 100%;
+    max-width: 480px;
+    scroll-snap-type: y mandatory;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+/* Ajustes para los videos */
+.video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    scroll-snap-align: start;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mantener la relación de aspecto 9:16 para el contenedor */
+.video_player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  /* Ancho al 100% */
+    height: 100%;  /* Alto al 100% */
+    object-fit: contain;  /* Ajusta la relación de aspecto sin distorsionar */
+}
+
+/* Evitar que los videos se salgan de su contenedor */
+.app_videos::-webkit-scrollbar {
+    display: none;
+}
+
+.app_videos {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 320px) and (max-height: 100px) {
+    .video_player {
+        object-fit: contain;  /* Asegura que el video se ajuste dentro del contenedor sin distorsionar */
+    }
+    .video {
+        height: 100%;  /* Ajusta el alto del video al 100% del contenedor */
+    }
+}
+
+@media (max-width: 320px) and (max-height: 100px) {
+    .video_player {
+        object-fit: contain;  /* Asegura que el video se ajuste dentro del contenedor sin distorsionar */
+    }
+    .video {
+        height: 100%;  /* Ajusta el alto del video al 100% del contenedor */
+    }
+}
+
+@media (orientation: portrait) {
+    /* Estilos cuando el alto de la pantalla es mayor que el ancho */
+    .app_videos {
+        max-width: 90%;
+        max-height: 80vh;
+        margin-top: 5vh;
+        margin-bottom: 0;
+    }
+    .video_player{
+        object-fit: cover;  /* Asegura que el video se ajuste dentro del contenedor sin distorsionar */
+    }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-height: 500px) {
+    
+    .bottom-nav {
+        width: 50%;
+        height: 40px; /* Define explícitamente la altura */
+    }
+
+    .videoSidebar {
+        position: absolute;
+        top: 35%;
+        right: 30%;
+    }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-height: 500px) {
+    
+    .bottom-nav {
+        width: 50%;
+        height: 40px; /* Define explícitamente la altura */
+    }
+}

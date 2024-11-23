@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="p5styles.css">
+    <link rel="icon" href="https://i.ibb.co/3swSf0Z/Group-2-transformed-1.png"  type="https://i.ibb.co/3swSf0Z/Group-2-transformed-1.png">
+    <title>NoLimites!</title>
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoLimites</title>
+    <link rel="stylesheet" href="styles.css">
+    <head>
+
+
+        <link rel="icon" href="https://i.ibb.co/cggQ4GP/Group-2.png"  type="https://i.ibb.co/cggQ4GP/Group-2.png">
+        <title>NoLimites!</title> 
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://i.ibb.co/NZGptNT/maleta.png"alt="Ícono de lupa" class="icon">
+      <h1>¿Haz trabajado anteriormente?</h1>
+    </div>
+    <div class="nav-buttons">
+      <button  id="previousButton" class="prev-btn">Anterior</button>
+      <button id="nextButton" class="next-btn">Siguiente</button>
+    </div>
+    <div class="options">
+      <div class="option">
+        <p>Si</p>
+      </div>
+      <div class="option">
+        <p>No</p>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('nextButton').addEventListener('click', function() {
+      let url;
+      url = "p7index.html";
+      url.replace(" ","%20") 
+      window.location.href = url; 
+    });
+
+    document.getElementById('previousButton').addEventListener('click', function() {
+      let url;
+      url = "p4index.html";
+      url.replace(" ","%20") 
+      window.location.href = url; 
+    });
+  </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
