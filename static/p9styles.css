@@ -1,0 +1,179 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #d0c6fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 20px;
+  color: black;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 20px;
+  background: white; 
+  border-radius: 15px;
+  text-align: center;
+  width: 100%;
+  border: 3px solid #4f75ff;
+    margin-bottom: 150px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #6439ff;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Estilo para el campo de búsqueda */
+.search-container {
+  margin: 15px 0;
+}
+
+.search-label {
+  font-size: 18px;
+  color: #4f75ff;
+  margin-bottom: 8px;
+  display: block;
+}
+
+#searchInput {
+  padding: 12px;
+  font-size: 18px;
+  border: 2px solid #4f75ff;
+  border-radius: 8px;
+  margin-top: 8px;
+  transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+  border-color: #6439ff;
+}
+
+/* Árbol desplegable */
+.tree-container {
+  margin: 20px 0;
+  text-align: left;
+  font-size: 18px;
+}
+
+.tree-container ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.tree-container li {
+  margin: 10px 0;
+}
+
+.tree-container li .nested {
+  display: none;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.tree-container input:checked + label + .nested {
+  display: block;
+}
+
+/* Botón Enviar */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #4f75ff;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #6439ff;
+  transform: scale(1.05);
+}
+
+/* Botón "Siguiente" */
+.next-btn, .previous-btn {
+  padding: 20px 30px;
+  background-color: #6439ff;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.next-btn:hover, .previous-btn:hover {
+  background-color: #4f75ff;
+  transform: scale(1.05);
+}
+
+/* Ubicación de los botones */
+.previous-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.next-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Mensajes */
+.alert {
+  margin-top: 20px;
+  padding: 10px;
+  color: white;
+  background-color: #c92121;
+  border-radius: 8px;
+  text-align: center;
+  display: none;
+}
+
+.success {
+  margin-top: 20px;
+  padding: 10px;
+  color: white;
+  background-color: #00cccc;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Accesibilidad */
+label:focus-within, #searchInput:focus, .sector-checkbox:focus {
+  outline: 3px dashed #4f75ff;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+      animation: none;
+      transition: none;
+  }
+}
+
+.tree-container{
+  color: black;
+}
+
+h1{
+    margin: 10px;
+}

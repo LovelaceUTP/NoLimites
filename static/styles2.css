@@ -1,0 +1,545 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #ffffff;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.icons button {
+  background: #e0f0ff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #0078ff;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: left;
+}
+
+p {
+  color: #666;
+  margin: 10px 0;
+
+}
+
+.ingresar{
+  text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.input-group label img {
+  width: 45px;
+  margin-right: 15px;
+  margin-left: 15px
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  background: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.forgot-password {
+  display: block;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #0078ff;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 0 auto; /* Centra el botón horizontalmente */
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.btn:hover {
+  background: #574fcc;
+}
+
+.register {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #666;
+}
+
+.register a {
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+
+.forgot-password{
+    margin-bottom: 50px;
+    text-align: right;
+    font-size: 18px;
+    color: #6c63ff;
+}
+
+
+.full-screen-image {
+    position: absolute;
+    top: auto;
+    left: 50%;
+    width: auto;
+    height: 80%;
+    object-fit: cover; /* La imagen cubre todo el contenedor */
+    z-index: -1; /* Coloca la imagen detrás de otros elementos */
+    transform: translateX(-50%); /* Centra la imagen horizontalmente */
+}
+
+.crearCuenta{
+    margin-bottom: 70px;
+}
+
+#submitCuenta{
+    margin-top: 70px;
+}
+
+/* Barra de navegación */
+.bottom-nav {
+    position:  absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 10px 0;
+    box-shadow: 5px 8px 9px rgba(35, 35, 35, 0.4);
+    z-index: 9999;
+    border: 1px solid black;
+    border-radius: 40px;
+    margin-bottom: 10px; /* Asegura que no haya margen extra */
+    height: 60px; /* Define explícitamente la altura */
+}
+
+.nav-item img {
+    width: auto;
+    height: 90%;
+}
+
+.nav-item.active img {
+    filter: brightness(0.5);
+}
+
+
+/* VIDEO */
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+/* Contenedor de videos */
+.app_videos {
+    position: relative;
+    height: calc(100vh - 100px);
+    overflow-y: auto; 
+    width: 100%;
+    scroll-snap-type: y mandatory;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 0; /* Eliminar margen inferior */
+    padding: 0; /* Eliminar cualquier relleno */
+}
+
+.app_videos::-webkit-scrollbar {
+    display: none;
+}
+
+.app_videos {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    scroll-snap-align: start;
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar relleno */
+}
+
+/* Contenedor con relación de aspecto */
+.aspect-ratio-container {
+    position: relative;
+    width: 100%; /* El ancho del contenedor principal */
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    overflow: hidden; /* Asegura que no se desborde contenido */
+    border-radius: 20px; /* Opcional, si deseas bordes redondeados */
+    background-color: black; /* Fondo mientras el video carga */
+}
+
+.video_player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* El video ocupa todo el ancho del contenedor */
+    height: 100%; /* El video ocupa todo el alto del contenedor */
+    object-fit: contain; /* Hace que el video mantenga su relación de aspecto sin recortar */
+    /* background-color: rgb(0, 220, 110); Fondo negro cuando el video no cubra toda el área */
+}
+
+.videoSidebar {
+    position: absolute;
+    top: 35%;
+    right: 10px;
+    width: 15%;
+    height: 100%;
+}
+
+.videoSidebar .videoSidebar_button {
+    width: 50%;
+    height: 10%;
+    /* background-color: red; */
+    cursor: pointer;
+}
+
+.videoSidebar_button img {
+    width: auto;              /* La imagen ocupará todo el ancho del contenedor */
+    height: 8vh;             /* Mantiene la proporción de la imagen */
+}
+
+.titulo {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Asegura que estén separados uno a cada lado */
+}
+
+.titulo img {
+  width: 25vw; /* Ajusta el tamaño de la imagen */
+  max-width: 140px;
+  height: auto;
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.saludar {
+  margin: 0;
+  font-size: 40px;
+  text-align: right; /* Alinea el texto a la derecha */
+  flex: 1; /* Permite al texto ocupar el resto del espacio */
+}
+
+h2{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    font-size: 25px;
+}
+
+.btnEmpezar {
+  display: block;
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 20px;
+  font-size: 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 0 auto; /* Centra el botón horizontalmente */
+  text-align: center; /* Asegura que el texto esté centrado */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btnEmpezar:hover {
+  background: #574fcc;
+}
+
+.descargarcv {
+  margin: 0;
+  font-size: 25px;
+  text-align: center; /* Alinea el texto a la derecha */
+  flex: 1; /* Permite al texto ocupar el resto del espacio */
+}
+
+#new{
+    padding: 50px;
+}
+
+.popup {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-buttons {
+  margin-top: 20px;
+}
+
+.popup-buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#permitir {
+  background-color: #0b92ad; /* Verde */
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+#permitir:hover {
+  background-color: #0a6375;
+}
+
+#denegar {
+  background-color: #f45b2d; /* Rojo */
+  color: white;
+  border-radius: 10px;
+  font-size: 20px; 
+}
+
+#denegar:hover {
+  background-color: #b9370f;
+}
+
+.popup-content p{
+  font-size: 20px;
+}
+
+.bienvenida{
+  position: relative;
+  width: 100%;
+}
+
+.pregun{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 80px;
+  color: rgb(64, 41, 141);
+}
+
+
+
+/* Estilos para el contenedor de imagen y saludo */
+.imgSaludo {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}
+
+.imgSaludo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.imgSaludo p {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+
+/* Estilos para los detalles personales */
+.detalles-container {
+  margin-top: 20px;
+}
+
+.detalles {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+}
+
+.sub {
+  font-size: 1.2em;
+  color: #555;
+  margin: 5px 0;
+}
+
+.rep {
+  font-size: 1.2em;
+  color: #222;
+  margin: 5px 0;
+}
+
+.detalle {
+  margin-bottom: 15px;
+}
+
+#btnCV{
+  background-color: #574fcc;
+}
+
+#btnCerrar{
+  background-color: #f45b2d;
+}
+
+
+
+.popup1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+  z-index: 1001;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content1 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-buttons1 {
+  margin-top: 20px;
+}
+
+.popup-buttons1 button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#permitir1 {
+  background-color: #0b92ad; /* Verde */
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+#permitir1:hover {
+  background-color: #0a6375;
+}
+
+#denegar1 {
+  background-color: #f45b2d; /* Rojo */
+  color: white;
+  border-radius: 10px;
+  font-size: 20px; 
+}
+
+#denegar1:hover {
+  background-color: #b9370f;
+}
+
+.popup-content1 p{
+  font-size: 20px;
+}
+
+.micro{
+  position: relative;
+  width: 30%;
+}
+
+#respuesta-si {
+  background-color: #0b92ad; /* Verde */
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+#respuesta-si:hover {
+  background-color: #0a6375;
+}
+
+#respuesta-no {
+  background-color: #f45b2d; /* Rojo */
+  color: white;
+  border-radius: 10px;
+  font-size: 20px; 
+}
+
+#respuesta-no:hover {
+  background-color: #b9370f;
+}
