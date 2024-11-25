@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Pago Deseado</title>
+  <link rel="stylesheet" href="../static/pstyles.css">
+</head>
+<body>
+  <div class="background-cover"></div>
+  <div class="container">
+    <h1>Formulario de Pago Deseado</h1>
+    <form action="/p3" method="POST">
+        <label for="pago-deseado">¿Cuál es tu pago deseado o un aproximado?</label>
+
+        <!-- Contenedor de entrada -->
+        <div class="input-container">
+            <span class="currency-symbol">S/.</span>
+            <input 
+                type="text" 
+                id="pago-deseado" 
+                name="pago-deseado" 
+                placeholder="0.00" 
+                oninput="validarEntrada(this)"
+                required>
+        </div>
+
+        <!-- Botón Aceptar -->
+        <div class="btn-container">
+            <button type="submit" class="btn-accept">Aceptar</button>
+        </div>
+    </form>
+
+    <!-- Botón "Anterior" -->
+    <button id="previousButton" class="previous-btn">Anterior</button>
+  </div>
+  
+  <script>
+    document.getElementById('previousButton').addEventListener('click', function(event) {
+      event.preventDefault(); // Evita cualquier comportamiento por defecto
+      window.location.href = '/p2';
+    });
+
+    // Validar la entrada del campo para que solo acepte números y formato decimal
+    function validarEntrada(input) {
+      input.value = input.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');
+    }
+  </script>
+</body>
+</html>

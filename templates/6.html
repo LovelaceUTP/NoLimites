@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregunta</title>
+  <link rel="stylesheet" href="../static/p6styles.css">
+</head>
+<body>
+  <div class="background-cover"></div>
+  <div class="container">
+    <div class="header">
+      <img src="https://i.ibb.co/W0GbNgZ/dinero.png" alt="Ícono de lupa" class="icon">
+      <h1>¿Cómo es tu situación económica actual?</h1>
+    </div>
+    <div class="options">
+      <div id="option1" class="option">
+        <img src="https://i.ibb.co/Ht2JD1L/pexels-karolina-grabowska-5900250.jpg" alt="Espacio Organizado">
+        <p>Puedo pagar todo sin problemas</p>
+      </div>
+      <div id="option2" class="option">
+        <img src="https://i.ibb.co/L138d0v/pexels-mikhail-nilov-6963875.jpg" alt="Buenas luces y sonido">
+        <p>Pago lo básico, pero a veces necesito ayuda</p>
+      </div>
+      <div id="option3" class="option">
+        <img src="https://i.ibb.co/dQkZG2F/pexels-karolina-grabowska-5900157.jpg" alt="Instrucciones claras">
+        <p>Me cuesta pagar cosas importantes</p>
+      </div>
+      <div id="option4" class="option">
+        <img src="https://i.ibb.co/2Wsfc16/pexels-rdne-6646917.jpg" alt="Me adapto a todo">
+        <p>Vivo de ayudas o apoyos</p>
+      </div>
+    </div>
+  </div>
+  <button id="previousButton" class="previous-btn">Anterior</button>
+  <script>
+    // Función para redirigir con el parámetro adecuado
+    function redirectWithResponse(response) {
+      window.location.href = '/p6?response=' + response;  // Asegúrate de que el parámetro se llame 'response'
+    }
+  
+    // Opciones de respuesta
+    document.getElementById('option1').addEventListener('click', function(event) {
+      event.preventDefault(); 
+      redirectWithResponse('0');
+    });
+  
+    document.getElementById('option2').addEventListener('click', function(event) {
+      event.preventDefault(); 
+      redirectWithResponse('1');
+    });
+  
+    document.getElementById('option3').addEventListener('click', function(event) {
+      event.preventDefault(); 
+      redirectWithResponse('2');
+    });
+  
+    document.getElementById('option4').addEventListener('click', function(event) {
+      event.preventDefault(); 
+      redirectWithResponse('3');
+    });
+  
+    document.getElementById('previousButton').addEventListener('click', function(event) {
+      event.preventDefault(); 
+      window.location.href = '/p5';  // Asegúrate de que la ruta /p5 exista
+    });
+  </script>
+  
+</body>
+</html>

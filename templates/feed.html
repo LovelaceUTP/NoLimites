@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoLimites!</title>
+    <link rel="stylesheet" href="../static/styles2.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+<body style="background-color: black">
+
+    <div id="popup-inicial" class="popup">
+        <div class="popup-content">
+            <p class="pregun"><b>¿Estás buscando trabajos relacionados con tu perfil?</b></p>
+            <img class="micro" src="../static/micro.png" alt="micro">
+            <div class="popup-buttons">
+                <button id="respuesta-si">Sí</button>
+                <button id="respuesta-no">No</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <img class="bienvenida" src="../static/title.png" alt="bienvenido">
+            <p class="pregun"><b>¿Quieres que busquemos trabajos cerca a ti?</b></p>
+            <p>Activa tu ubicación</p>
+            <div class="popup-buttons">
+                <button id="permitir">Sí</button>
+                <button id="denegar">No</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="app_videos ">
+        <div class="video">
+            <video src="../static/Video4.mp4" loop class="video_player"></video>
+
+            <div class="videoSidebar">
+                <div class="videoSidebar_button">
+                    <span class="material-icons"> 
+                        <a href="https://www.empleosperu.gob.pe/portal-mtpe/#/"><img src="../static/postular.png" alt="postular"></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video">
+            <video src="../static/Video2.mp4" autoplay loop class="video_player"></video>
+
+            <div class="videoSidebar">
+                <div class="videoSidebar_button">
+                    <a href="https://www.empleosperu.gob.pe/portal-mtpe/#/"><img src="../static/postular.png" alt="postular"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="video">
+            <video src="../static/VideoIA.mp4" autoplay loop class="video_player"></video>
+
+            <div class="videoSidebar">
+                <div class="videoSidebar_button">
+                    <a href="https://www.empleosperu.gob.pe/portal-mtpe/#/"><img src="../static/postular.png" alt="postular"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="video">
+            <video src="../static/Video4.mp4" autoplay loop class="video_player"></video>
+
+            <div class="videoSidebar">
+                <div class="videoSidebar_button">
+                    <a href="https://www.empleosperu.gob.pe/portal-mtpe/#/"><img src="../static/postular.png" alt="postular"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="bottom-nav">
+        <a href="/feed" class="nav-item">
+            <img src="https://i.ibb.co/tqdq4Kr/love.png" alt="Favoritos">
+        </a>
+        <a href="/" class="nav-item">
+            <img src="https://i.ibb.co/h1D8pXd/home.png" alt="Inicio">
+        </a>
+        <a href="/perfil" class="nav-item active">
+            <img src="https://i.ibb.co/Bj81hJV/user.png" alt="Perfil">
+        </a>
+    </nav>
+    
+
+    <script>
+        speech = new SpeechSynthesisUtterance("Esta es la pestaña de trabajos recomendados");
+  
+        // Opcional: Puedes personalizar la voz, velocidad y tono
+        speech.rate = 1; // Velocidad de la voz (1 es la velocidad normal)
+        speech.pitch = 2; // Tono de la voz (1 es tono normal)
+        speech.lang = "es-ES"; // Idioma español de España
+  
+        // Iniciar la síntesis de voz
+        speechSynthesis.speak(speech);
+      </script>
+    <script src="../static/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modalidad Ideal</title>
+  <link rel="stylesheet" href="../static/pstyles.css">
+</head>
+<body>
+  <div class="background-cover"></div>
+  <div class="container" id="block">
+    
+    <div class="form-container" id="contrato">
+        <h1>Selecciona tu modalidad ideal</h1>
+        <p>Por favor selecciona una de las siguientes modalidades.</p>
+
+        <form method="POST" action="/p4" id="modalidadForm">
+            <div class="radio-group" role="group" aria-labelledby="contractOptions">
+                <label>
+                    <input type="radio" name="modalidad" value="0">
+                    <span>Remoto</span>
+                </label>
+                <label>
+                    <input type="radio" name="modalidad" value="1">
+                    <span>Presencial</span>
+                </label>
+                <label>
+                    <input type="radio" name="modalidad" value="2">
+                    <span>Mixto</span>
+                </label>
+            </div>
+            <button id="submit-btn" type="submit" class="submit-btn">Enviar</button>
+
+            <!-- Mensajes de alerta y éxito -->
+            <div id="alert" class="alert" style="display: none;">⚠️ Por favor, selecciona una opción.</div>
+            <div id="successMessage" class="success" style="display: none;">¡Gracias! Hemos registrado tu selección.</div>
+        </form>
+    </div>
+  </div>
+  <button id="previousButton" class="previous-btn">Anterior</button>
+    
+  <script>
+      const selectedOption = document.querySelector('input[name="modalidad"]:checked');
+      const alertMessage = document.getElementById('alert');
+      const successMessage = document.getElementById('successMessage');
+
+      if (selectedOption) {
+        const modalidad = selectedOption.value;  // Obtener el valor de la opción seleccionada
+        alertMessage.style.display = 'none'; // Ocultar mensaje de alerta
+        successMessage.style.display = 'block'; // Mostrar mensaje de éxito
+        setTimeout(() => {
+          // Redirigir con el parámetro 'modalidad' sin necesidad de formatear el nombre
+          window.location.href = `/p4?modalidad=${encodeURIComponent(modalidad)}`; 
+        }, 1000);
+      } else {
+        alertMessage.style.display = 'block'; // Mostrar mensaje de alerta
+        successMessage.style.display = 'none'; // Ocultar mensaje de éxito
+      }
+    });
+
+    document.getElementById('previousButton').addEventListener('click', function(event) {
+      event.preventDefault(); // Evita cualquier comportamiento por defecto
+      window.location.href = '/p3';
+    });
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregunta</title>
+  <link rel="stylesheet" href="../static/pstyles.css">
+</head>
+<body>
+  <div class="background-cover"></div>
+  <div class="container">
+    <div class="form-container">
+      <form action="/p10" method="POST">
+        <h1>¿Cuál es tu trabajo deseado?</h1>
+        <textarea id="trabajo" class="input-field" name="trabajo" placeholder="¡Vamos, todo es válido!"></textarea>
+        <button type="submit" class="submit-btn">Enviar</button>
+      </form>
+      
+</div>
+  </div>
+    <button id="previousButton" class="previous-btn">Anterior</button>
+</body>
+    <script>
+    document.getElementById('previousButton').addEventListener('click', function(event) {
+      event.preventDefault(); // Evita que el formulario se envíe
+      window.location.href = '/p9';
+    });
+  </script>
+</html>

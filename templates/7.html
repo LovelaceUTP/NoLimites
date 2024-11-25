@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregunta</title>
+  <link rel="stylesheet" href="../static/pstyles.css">
+</head>
+<body>
+  <div class="background-cover"></div>
+  <div class="container">
+    <div class="header">
+      <img src="https://i.ibb.co/G29RBCf/ingreso.png" alt="Ícono de lupa" class="icon">
+      <h1>¿Alguien depende de ti económicamente?</h1>
+    </div>
+    <div class="options">
+      <div id="option1" class="option" data-value="0">
+        <img src="https://i.ibb.co/K9VDPtx/pexels-photo-1128316.jpg" alt="Espacio Organizado">
+        <p>Sí, 1 o 2 personas</p>
+      </div>
+      <div id="option2" class="option" data-value="1">
+        <img src="https://i.ibb.co/WnStsDP/pexels-photo-8188698.webp" alt="Buenas luces y sonido">
+        <p>Sí, más de 2 personas</p>
+      </div>
+      <div id="option3" class="option" data-value="2">
+        <img src="https://i.ibb.co/5rHXZ5w/women-hands-paying-receiving-peruvian-600nw-1515451694.webp" alt="Instrucciones claras">
+        <p>No, pero a veces ayudo a alguien</p>
+      </div>
+      <div id="option4" class="option" data-value="3">
+        <img src="https://i.ibb.co/gv4vjgk/pexels-lukas-rychvalsky-670720.jpg" alt="Me adapto a todo">
+        <p>No, nadie depende de mí</p>
+      </div>
+    </div>
+  </div>
+  <button id="previousButton" class="previous-btn">Anterior</button>
+
+  <script>
+    // Redirige al hacer clic en una opción y pasa el valor seleccionado
+    document.querySelectorAll('.option').forEach(function(option) {
+      option.addEventListener('click', function(event) {
+        event.preventDefault(); // Evita el comportamiento por defecto
+        const selectedValue = option.getAttribute('data-value'); // Obtiene el valor de la opción seleccionada
+        window.location.href = '/p7?respuesta=' + selectedValue; // Redirige con el valor como parámetro
+      });
+    });
+
+    document.getElementById('previousButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.location.href = '/p6';  // Redirige a la página p6 al hacer clic
+  });
+
+  </script>
+</body>
+</html>

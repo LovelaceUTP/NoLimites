@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interfaz de Inicio de Sesión</title>
+  <link rel="stylesheet" href="../static/styles2.css">
+</head>
+<body>
+  <div class="background-cover"></div>
+  <div class="container">
+    <h1 class="crearCuenta">Crear Cuenta</h1>
+    <form action="/signin" method="post" onsubmit="validateForm()">
+      <div class="input-group">
+        <label class="dni">
+          <img src="../static/user.png" alt="User ico">
+        </label>
+        <input type="text" id="username" name="username" placeholder="Nombre">
+      </div>
+      <div class="input-group">
+        <label class="dni">
+          <img src="../static/dni.png" alt="DNI Icono">
+        </label>
+        <input type="text" id="dni" name="dni" placeholder="Número de DNI">
+      </div>
+      <div class="input-group">
+        <label class="numero">
+          <img src="../static/llamada.png" alt="Llamada Icono">
+        </label>
+        <input type="text" id="celular" name="celular" placeholder="Numero de celular">
+      </div>
+      <div class="input-group">
+        <label class="password">
+          <img src="../static/password.png" alt="Contraseña Icono">
+        </label>
+        <input type="password" id="password" name="password" placeholder="Ingresar contraseña">
+      </div>
+      <button type="submit" class="btn" id="submitCuenta">Crear Cuenta</button>
+    </form>
+    <p class="register">
+        ¿Ya tienes una cuenta? <br><a href="/login"><b>Iniciar Sesion</b></a> 
+    </p>
+    
+  </div>
+    
+    <nav class="bottom-nav">
+        <a href="/" class="nav-item">
+            <img src="https://i.ibb.co/tqdq4Kr/love.png" alt="Favoritos">
+        </a>
+        <a href="/" class="nav-item">
+            <img src="https://i.ibb.co/h1D8pXd/home.png" alt="Inicio">
+        </a>
+        <a href="/perfil" class="nav-item active">
+            <img src="https://i.ibb.co/Bj81hJV/user.png" alt="Perfil">
+        </a>
+    </nav>
+    
+    <img src="../static/Vector.png" alt="Imagen de Pantalla Completa" class="full-screen-image">
+    <script>
+      document.getElementById('submitCuenta').addEventListener('click', function(event) {
+          event.preventDefault(); // Evita que el formulario se envíe, pero solo si la validación falla
+
+          // Aquí puedes agregar la validación si es necesario
+          // Ejemplo de validación simple:
+          if (document.getElementById('username').value && 
+              document.getElementById('dni').value && 
+              document.getElementById('celular').value && 
+              document.getElementById('password').value) {
+              // Si todo está correcto, ahora envía el formulario
+              event.target.closest('form').submit(); // Enviar el formulario
+          } else {
+              alert('Por favor, complete todos los campos');
+          }
+      });
+
+    </script>
+</body>
+</html>

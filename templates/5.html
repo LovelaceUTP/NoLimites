@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregunta</title>
+  <link rel="stylesheet" href="../static/pstyles.css">
+</head>
+<body>
+  <div class="background-cover"></div>
+  <div class="container">
+    <div class="header">
+      <img src="https://i.ibb.co/NZGptNT/maleta.png" alt="Ícono de lupa" class="icon">
+      <h1>¿Haz trabajado anteriormente?</h1>
+    </div>
+    <div class="options">
+      <div id="yes-btn" class="option">
+        <p>Si</p>
+      </div>
+      <div id="no-btn" class="option">
+        <p>No</p>
+      </div>
+    </div>
+  </div>
+  <button id="previousButton" class="previous-btn">Anterior</button>
+
+  <script>
+    // Variables para los botones
+    document.getElementById('yes-btn').addEventListener('click', function(event) {
+      event.preventDefault(); // Evita que el formulario se envíe
+      // Redirige con el parámetro 'response=yes'
+      window.location.href = '/p5?response2='+"1";  // Redirige a p5 con respuesta 'yes'
+    });
+
+    document.getElementById('no-btn').addEventListener('click', function(event) {
+      event.preventDefault(); // Evita que el formulario se envíe
+      // Redirige con el parámetro 'response=no'
+      window.location.href = '/p5?response2='+"0";  // Redirige a p5 con respuesta 'no'
+    });
+
+    // Botón para ir atrás
+    document.getElementById('previousButton').addEventListener('click', function(event) {
+      event.preventDefault(); // Evita que el formulario se envíe
+      window.location.href = '/p4';
+    });
+  </script>
+</body>
+</html>

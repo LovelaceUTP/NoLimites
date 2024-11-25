@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregunta</title>
+  <link rel="stylesheet" href="../static/p8styles.css">
+</head>
+<body>
+  <div class="background-cover"></div>
+  <div class="container">
+    <div class="header">
+      <img src="https://i.ibb.co/xCwkbYJ/habilidades-blandas.png" alt="Ícono de lupa" class="icon">
+      <h1>¿Qué habilidades crees que podrías tener, aunque no hayas trabajado antes?</h1>
+    </div>
+    <div class="options">
+      <div id="option1" class="option" data-value="0">
+        <p>Habilidades personales</p>
+        <img src="https://i.ibb.co/g7r1Nrt/pexels-silverkblack-23224905.jpg" alt="Tareas creativas">
+        <p>Puntualidad, paciencia, astucia</p>
+      </div>
+      <div id="option2" class="option" data-value="1">
+        <p>Habilidades de comunicación</p>
+        <img src="https://i.ibb.co/T095TNW/pexels-shkrabaanthony-6288088.jpg" alt="Comunicación">
+        <p>Comprensión, innovación, amabilidad</p>
+      </div>
+      <div id="option3" class="option" data-value="2">
+        <p>Habilidades prácticas</p>
+        <img src="https://i.ibb.co/WpCBYQx/pexels-fauxels-3183186.jpg" alt="Habilidades prácticas">
+        <p>Resolver problemas, organizar tareas</p>
+      </div>
+      <div id="option4" class="option" data-value="3">
+        <p>Habilidades tecnológicas</p>
+        <img src="https://i.ibb.co/7pFC7Mh/pexels-assedrani-official-177638678-20924549.jpg" alt="Tecnología">
+        <p>Tecnología, programar, manejar máquinas</p>
+      </div>
+      <div id="option5" class="option" data-value="4">
+        <p>Habilidades analíticas</p>
+        <img src="https://i.ibb.co/JCGCBnK/pexels-a-darmel-7710084.jpg" alt="Habilidades analíticas">
+        <p>Decidir, mejorar, creatividad</p>
+      </div>
+    </div>
+    <button id="previousButton" class="previous-btn">Anterior</button>
+  </div>
+  <script>
+    // Redirigir con el valor de la opción seleccionada a p8
+    document.querySelectorAll('.option').forEach(function(option) {
+      option.addEventListener('click', function(event) {
+        event.preventDefault(); // Evita que el formulario se envíe
+        const selectedValue = option.getAttribute('data-value'); // Obtiene el valor de la opción
+        window.location.href = '/p8?respuesta=' + selectedValue; // Redirige con el valor
+      });
+    });
+
+    // Redirige al hacer clic en el botón "Anterior"
+    document.getElementById('previousButton').addEventListener('click', function(event) {
+      event.preventDefault();
+      window.location.href = '/p7';
+    });
+  </script>
+</body>
+</html>
