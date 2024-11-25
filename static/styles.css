@@ -1,0 +1,152 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+        padding-bottom: 60px; /* Espacio para el navbar inferior */
+}
+
+body {
+    color: white;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.barra {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.barra ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.barra ul li {
+    margin: 0 15px;
+}
+
+.barra ul li a img {
+    width: 30px; /* Ajusta el tamaño de las imágenes según sea necesario */
+    height: 30px;
+}
+
+/*VIDEO*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+/* Contenedor de videos */
+.app_videos {
+    position: relative;
+    height: calc(100vh - 100px);
+    overflow-y: auto; 
+    width: 100%;
+    max-width: 320px;
+    scroll-snap-type: y mandatory;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 0; /* Eliminar margen inferior */
+    padding: 0; /* Eliminar cualquier relleno */
+}
+
+.app_videos::-webkit-scrollbar {
+    display: none;
+}
+
+.app_videos {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    scroll-snap-align: start;
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar relleno */
+}
+
+/* Contenedor con relación de aspecto */
+.aspect-ratio-container {
+    position: relative;
+    width: 100%; /* El ancho del contenedor principal */
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    overflow: hidden; /* Asegura que no se desborde contenido */
+    border-radius: 20px; /* Opcional, si deseas bordes redondeados */
+    background-color: black; /* Fondo mientras el video carga */
+}
+
+.video_player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* El video ocupa todo el ancho del contenedor */
+    height: 100%; /* El video ocupa todo el alto del contenedor */
+    object-fit: contain; /* Hace que el video mantenga su relación de aspecto sin recortar */
+    /* background-color: rgb(0, 220, 110); Fondo negro cuando el video no cubra toda el área */
+}
+
+.videoSidebar {
+    position: absolute;
+    top: 35%;
+    right: 10px;
+    width: 15%;
+    height: 100%;
+}
+
+.videoSidebar .videoSidebar_button {
+    width: 50%;
+    height: 10%;
+    /* background-color: red; */
+    cursor: pointer;
+}
+
+.videoSidebar_button img {
+    width: auto;              /* La imagen ocupará todo el ancho del contenedor */
+    height: 8vh;             /* Mantiene la proporción de la imagen */
+}
+
+.sound {
+    position: absolute; /* Fijo en la pantalla */
+    left: 10px; /* Ajusta según tus necesidades */
+    top: 10px; /* Ubícalo en la esquina inferior derecha */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo para que destaque */
+    color: white; /* Color del ícono */
+    border-radius: 50%; /* Forma redonda */
+    width: 50px; /* Tamaño del botón */
+    height: 50px; /* Tamaño del botón */
+    display: flex; /* Centra el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+
+}
+
+.sound .material-symbols-outlined {
+    font-size: 24px; /* Tamaño del ícono */
+}
+
+/*end video/*
